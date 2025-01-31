@@ -77,9 +77,9 @@ class HowLongToBeatEntry {
   String toString() {
     return '''
 $gameName
-${formattedPlayTime}
-${formattedPlatforms}
-${formattedReleaseYear}''';
+$formattedPlayTime
+$formattedPlatforms
+$formattedReleaseYear''';
   }
 
   Map<String, dynamic> toJson() => {
