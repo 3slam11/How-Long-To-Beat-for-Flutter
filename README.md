@@ -5,11 +5,14 @@ A Dart/Flutter package designed to fetch game completion times from [HowLongToBe
 ## Features
 
 - **Search for Games**: Search for games by name and retrieve their completion times.
+  
 - **Playstyle Completion Times**: Get completion times for different playstyles:
+  
   - Main Story
   - Main + Extra
   - Completionist
   - All Styles
+    
 - **Game Details**: Access additional game details such as:
   - Game ID
   - Game Name
