@@ -55,7 +55,7 @@ void main() async {
   final hltb = HowLongToBeat();
 
   // Search for a game
-  final results = await hltb.searchGame('The Witcher 3');
+  final results = await hltb.search('The Witcher 3');
 
   if (results.isNotEmpty) {
     final game = results.first;
