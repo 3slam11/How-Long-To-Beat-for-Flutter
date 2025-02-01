@@ -39,7 +39,7 @@ Add the package to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  howlongtobeat: ^1.0.0
+  howlongtobeat: ^latest_version
 ```
 
 Then, run `flutter pub get` to install the package.
