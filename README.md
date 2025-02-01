@@ -1,6 +1,6 @@
 # HowLongToBeat Flutter Package
 
-A Flutter package designed to fetch game completion times from [HowLongToBeat.com](howlongtobeat.com/). This package allows you to search for games, retrieve their completion times for different playstyles, and access additional game details such as release year, platforms, and review scores.
+A Flutter package designed to fetch game completion times from [HowLongToBeat.com](https://howlongtobeat.com/). This package allows you to search for games, retrieve their completion times for different playstyles, and access additional game details such as release year, platforms, and review scores.
 
 The package is based on the [ScrappyCocco](https://github.com/ScrappyCocco) python package.
 
@@ -75,5 +75,5 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 ## Acknowledgments
 
-- [HowLongToBeat.com](howlongtobeat.com/). for providing the data.
+- [HowLongToBeat.com](https://howlongtobeat.com/) for providing the data.
 - [ScrappyCocco](https://github.com/ScrappyCocco) for their python package.
