@@ -1,0 +1,17 @@
+name: howlongtobeat_example
+description: Demonstrates how to use howlongtobeat_package.
+
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  howlongtobeat: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

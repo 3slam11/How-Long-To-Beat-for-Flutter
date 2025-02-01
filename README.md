@@ -142,6 +142,10 @@ class _HowLongToBeatExampleState extends State<HowLongToBeatExample> {
 }
 ```
 
+## Example
+
+See the [example](./example) folder for a complete example of how to use the package.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
