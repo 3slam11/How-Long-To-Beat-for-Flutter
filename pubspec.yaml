@@ -1,6 +1,6 @@
 name: howlongtobeat
 description: A Flutter package to fetch game completion times from HowLongToBeat.com
-version: 1.0.0
+version: 1.0.1 # fixing bugs and making readme more readable
 homepage: https://github.com/3slam11/How-Long-To-Beat-for-Flutter
 
 environment:
