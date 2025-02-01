@@ -1,18 +1,19 @@
-# HowLongToBeat Dart/Flutter Package
+# HowLongToBeat Flutter Package
 
-A Dart/Flutter package designed to fetch game completion times from [HowLongToBeat.com](https://howlongtobeat.com/). This package allows you to search for games, retrieve their completion times for different playstyles, and access additional game details such as release year, platforms, and review scores.
+A Flutter package designed to fetch game completion times from [HowLongToBeat.com](howlongtobeat.com/). This package allows you to search for games, retrieve their completion times for different playstyles, and access additional game details such as release year, platforms, and review scores.
+
+The package is based on the [ScrappyCocco](https://github.com/ScrappyCocco) python package.
 
 ## Features
 
 - **Search for Games**: Search for games by name and retrieve their completion times.
-  
 - **Playstyle Completion Times**: Get completion times for different playstyles:
-  
+
   - Main Story
   - Main + Extra
   - Completionist
   - All Styles
-    
+
 - **Game Details**: Access additional game details such as:
   - Game ID
   - Game Name
@@ -40,6 +41,7 @@ Add the package to your `pubspec.yaml` file:
 dependencies:
   howlongtobeat: ^1.0.0
 ```
+
 Then, run `flutter pub get` to install the package.
 
 ## Usage
@@ -73,5 +75,5 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 ## Acknowledgments
 
-- HowLongToBeat.com for providing the data.
-- The Dart and Flutter communities for their support and contributions.
+- [HowLongToBeat.com](howlongtobeat.com/). for providing the data.
+- [ScrappyCocco](https://github.com/ScrappyCocco) for their python package.
