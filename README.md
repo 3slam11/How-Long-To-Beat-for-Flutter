@@ -49,22 +49,95 @@ Then, run `flutter pub get` to install the package.
 Here’s a quick example of how to use the package:
 
 ```dart
+import 'package:flutter/material.dart';
 import 'package:howlongtobeat/howlongtobeat.dart';
 
-void main() async {
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'How Long To Beat Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HowLongToBeatExample(),
+    );
+  }
+}
+
+class HowLongToBeatExample extends StatefulWidget {
+  @override
+  _HowLongToBeatExampleState createState() => _HowLongToBeatExampleState();
+}
+
+class _HowLongToBeatExampleState extends State<HowLongToBeatExample> {
   final hltb = HowLongToBeat();
+  List<Game> _results = [];
+  bool _isLoading = false;
 
-  // Search for a game
-  final results = await hltb.search('The Witcher 3');
+  Future<void> _searchGame(String query) async {
+    setState(() {
+      _isLoading = true;
+    });
 
-  if (results.isNotEmpty) {
-    final game = results.first;
-    print('Game: ${game.name}');
-    print('Main Story: ${game.mainStory} hours');
-    print('Main + Extra: ${game.mainExtra} hours');
-    print('Completionist: ${game.completionist} hours');
-    print('Release Year: ${game.releaseYear}');
-    print('Platforms: ${game.platforms.join(', ')}');
+    final results = await hltb.search(query);
+
+    setState(() {
+      _results = results;
+      _isLoading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('How Long To Beat Example'),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: 'Search for a game',
+                border: OutlineInputBorder(),
+              ),
+              onSubmitted: (query) {
+                _searchGame(query);
+              },
+            ),
+          ),
+          _isLoading
+              ? Center(child: CircularProgressIndicator())
+              : Expanded(
+                  child: ListView.builder(
+                    itemCount: _results.length,
+                    itemBuilder: (context, index) {
+                      final game = _results[index];
+                      return ListTile(
+                        title: Text(game.name),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Main Story: ${game.mainStory} hours'),
+                            Text('Main + Extra: ${game.mainExtra} hours'),
+                            Text('Completionist: ${game.completionist} hours'),
+                            Text('Release Year: ${game.releaseYear}'),
+                            Text('Platforms: ${game.platforms.join(', ')}'),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+        ],
+      ),
+    );
   }
 }
 ```
